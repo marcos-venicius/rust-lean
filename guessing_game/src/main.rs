@@ -1,46 +1,39 @@
 use rand::Rng;
-use std::{cmp::Ordering, io, process};
+use std::{cmp::Ordering, io, process::Command};
 
 fn main() {
-    println!("GUESSING GAME\n");
+    println!("GUESSING GAME");
 
     let secret_number: u32 = rand::thread_rng().gen_range(1..=100);
 
-    let mut guess: String;
-    let mut attempts: u16 = 0;
-
     loop {
-        guess = String::new();
+        let mut guess = String::new();
 
-        if attempts > 1 {
-            println!("{attempts} attempts");
-        }
-
-        println!("guess: ");
+        println!("seu chute: ");
 
         io::stdin()
             .read_line(&mut guess)
-            .expect("cannot read guess");
-
-        process::Command::new("clear").status().unwrap();
+            .expect("Informe um valor válido");
 
         let guess: u32 = match guess.trim().parse() {
             Ok(num) => num,
             Err(_) => {
-                println!("[!] invalid guess");
+                println!("Por favor, informe um número válido");
                 continue;
             }
         };
 
+        Command::new("clear").status().unwrap();
+
+        println!("você chutou: {guess}");
+
         match guess.cmp(&secret_number) {
-            Ordering::Less => println!("Too small!"),
+            Ordering::Less => println!("Muito baixo"),
             Ordering::Equal => {
-                println!("You win!!");
+                println!("Parabéns, você acertou");
                 break;
             }
-            Ordering::Greater => println!("Too big!!"),
+            Ordering::Greater => println!("Muito alto"),
         }
-
-        attempts += 1;
     }
 }
