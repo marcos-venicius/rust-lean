@@ -87,7 +87,7 @@ Cada variante sem sinal (tipos que começam com `u` como `u8`, `u16`) pode guard
   Unicode: de `U+0000` até `U+D7FF` e `U+E000` até `U+10FFFF`
   
 
-# Compund Types
+# Compound Types
 
 Os tipos compostos no rust podem agrupar multiplos valores em um tipo.
 O rust tem dois tipos compostos primitivos: tuplas e listas (tuples, arrays)
