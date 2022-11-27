@@ -86,3 +86,34 @@ Cada variante sem sinal (tipos que começam com `u` como `u8`, `u16`) pode guard
   caracteres no rust são mais do que ASCII. Eles suportam letras acentuadas; chinesas, japonesas, e caracteres coreanos; emojis; e zero-width, spaços são `char`'s válidos 
   Unicode: de `U+0000` até `U+D7FF` e `U+E000` até `U+10FFFF`
   
+
+# Compund Types
+
+Os tipos compostos no rust podem agrupar multiplos valores em um tipo.
+O rust tem dois tipos compostos primitivos: tuplas e listas (tuples, arrays)
+
+### Tuplas
+
+* não necessita que todos os valor sejam do mesmo tipo
+* não precisa ser explicitamente tipada
+* dois modos de acessar
+    * desestruturando
+        ```rust
+        let color: (u8, u8, u8, f32) = (0, 255, 0, 0.5);
+
+        // desestruturando uma tupla
+        let (r, g, b, a) = color;
+        ```
+    * por período
+        ```rust
+        ...
+
+        // periodo
+        let alpha = color.3;
+        ```
+
+uma tupla sem nenhum valor tem um nome especial `unit`.
+O seu valor e seu tipo são ambos `()`
+
+veja exemplos [nesse arquivo](./src/tuples.rs);
+

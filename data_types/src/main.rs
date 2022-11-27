@@ -2,16 +2,18 @@ mod integer_overflow;
 mod operators;
 mod type_values;
 mod floating;
+mod tuples;
 
 pub enum Program {
     IntegerOverflow,
     TypeValues,
     Operators,
-    Floating
+    Floating,
+    Tuples,
 }
 
 
-const PROGRAM: Program = Program::Floating;
+const PROGRAM: Program = Program::Tuples;
 
 fn main() {
     // let byte = b'A'; // u8 only
@@ -24,6 +26,7 @@ fn main() {
         Program::TypeValues => type_values::new(),
         Program::IntegerOverflow => integer_overflow::new(),
         Program::Operators => operators::new(),
-        Program::Floating => floating::new()
+        Program::Floating => floating::new(),
+        Program::Tuples => tuples::new()
     }
 }
