@@ -124,7 +124,7 @@ Diferente de outras linguagens, arrays no rust tem um tamanho fixo.
 
 Arrays são úteis quando você quer que seus dados sejam alocados na stack ao invés
 da heap.
-ou quando você que ter certeza que sempre terá um número fixo de elementos.
+ou quando você tiver certeza que sempre terá um número fixo de elementos.
 
 Um array não é flexível como um `Vector`.
 

@@ -25,7 +25,7 @@ pub fn new() {
     // mas caso ele informe um valor que está fora do range do array
     // o programa irá gerar um panic e parar a execução do programa
     // pois o rust faz essa verificação
-    // o que garante que uma memória inválida
+    // o que garante que uma memória inválida não será acessada
     //
     // o que nos previne de um buffer overflow por exemplo
     // o que muitas outras linguagens não fazem esse tipo de tratamento por padrão
