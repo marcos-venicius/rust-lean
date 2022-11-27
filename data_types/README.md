@@ -92,7 +92,7 @@ Cada variante sem sinal (tipos que começam com `u` como `u8`, `u16`) pode guard
 Os tipos compostos no rust podem agrupar multiplos valores em um tipo.
 O rust tem dois tipos compostos primitivos: tuplas e listas (tuples, arrays)
 
-### Tuplas
+### Tuplas (Tuples)
 
 * não necessita que todos os valor sejam do mesmo tipo
 * não precisa ser explicitamente tipada
@@ -116,4 +116,27 @@ uma tupla sem nenhum valor tem um nome especial `unit`.
 O seu valor e seu tipo são ambos `()`
 
 veja exemplos [nesse arquivo](./src/tuples.rs);
+
+### Listas (arrays)
+
+Diferente da tupla cada elemento do array deve ser do mesmo tipo.
+Diferente de outras linguagens, arrays no rust tem um tamanho fixo.
+
+Arrays são úteis quando você quer que seus dados sejam alocados na stack ao invés
+da heap.
+ou quando você que ter certeza que sempre terá um número fixo de elementos.
+
+Um array não é flexível como um `Vector`.
+
+Um `Vector` é uma coleção similar provida pela biblioteca padrão que permite
+aumentar ou diminuir o tamanho.
+
+Se você não tem certeza se deve usar um `Array` ou um `Vector`, é provável que
+você deva usar um `Vector`.
+
+No entanto quando você sabe o número de elementos que a coleção terá e esse
+número não mudará é muito útil utilizar um array ao invés de um vector.
+por exemplo uma lista dos meses do ano sempre terão 12 elementos.
+
+veja exemplos [nesse arquivo](./src/arrays.rs)
 

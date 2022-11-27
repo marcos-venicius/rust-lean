@@ -1,19 +1,21 @@
 mod integer_overflow;
-mod operators;
 mod type_values;
 mod floating;
 mod tuples;
+mod arrays;
+mod arrays_p1;
 
 pub enum Program {
     IntegerOverflow,
     TypeValues,
-    Operators,
     Floating,
     Tuples,
+    Arrays,
+    ArraysProgram1,
 }
 
 
-const PROGRAM: Program = Program::Tuples;
+const PROGRAM: Program = Program::ArraysProgram1;
 
 fn main() {
     // let byte = b'A'; // u8 only
@@ -25,8 +27,9 @@ fn main() {
     match PROGRAM {
         Program::TypeValues => type_values::new(),
         Program::IntegerOverflow => integer_overflow::new(),
-        Program::Operators => operators::new(),
         Program::Floating => floating::new(),
-        Program::Tuples => tuples::new()
+        Program::Tuples => tuples::new(),
+        Program::Arrays => arrays::new(),
+        Program::ArraysProgram1 => arrays_p1::new()
     }
 }
