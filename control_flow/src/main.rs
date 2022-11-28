@@ -1,16 +1,16 @@
-mod loops;
+mod loops_returning_values;
 mod nested_if;
 
 pub enum Program {
     NestedIf,
-    Loops,
+    LoopsReturningValues,
 }
 
-const PROGRAM_RUNNING: Program = Program::Loops;
+const PROGRAM_RUNNING: Program = Program::LoopsReturningValues;
 
 fn main() {
     match PROGRAM_RUNNING {
         Program::NestedIf => nested_if::new(),
-        Program::Loops => loops::new(),
+        Program::LoopsReturningValues => loops_returning_values::new(),
     }
 }
